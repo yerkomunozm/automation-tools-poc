@@ -15,6 +15,11 @@ const { openBrowser, click, write, closeBrowser } = require('taiko');
     //Verifies if everything is ok
     assert.ok(await text("AFRAMAX ATLANTIC CARGO FIXTURE LIST").exists());
     console.info("Text AFRAMAX ATLANTIC exists");
+
+
+    // We can make some navigation inside the app
+
+
     //Tries to logout
     //await click($("#button_id"))
     await click("Admin");
