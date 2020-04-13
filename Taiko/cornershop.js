@@ -9,7 +9,7 @@ const { openBrowser, goto, click, textBox, write, closeBrowser } = require('taik
         await focus(textBox({id:'email'}));
         await write("yerko.munoz@gmail.com");
         await focus(textBox({id:'password'}));
-        await write(".hives 335");
+        await write("XXXXXX");
         await click(button('Iniciar sesión'));
         //We are inside
 
