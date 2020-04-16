@@ -1,20 +1,22 @@
 const assert = require('assert');
 
-const { openBrowser, click, write, closeBrowser } = require('taiko');
+const { openBrowser, click, write, closeBrowser, screencast } = require('taiko');
 (async () => {
     try {
         await openBrowser();
-	await goto("https://newcraftstgui.z22.web.core.windows.net", { navigationTimeout:150000} );
-    await click("SIGN IN WITH MICROSOFT");
-    await write("robert.sebenda@ttt.studio");
-    await click("Next");
-    await write("2T@LL2otems");
-    await click("Sign in");
-    await click("Yes", { navigationTimeout: 150000 });
+        await screencast.startScreencast('images/output_craft.gif');
+
+	    await goto("https://newcraftstgui.z22.web.core.windows.net", { navigationTimeout:150000} );
+        await click("SIGN IN WITH MICROSOFT");
+        await write("robert.sebenda@ttt.studio");
+        await click("Next");
+        await write("2T@LL2otems");
+        await click("Sign in");
+        await click("Yes", { navigationTimeout: 150000 });
 
     //Verifies if everything is ok
-    assert.ok(await text("AFRAMAX ATLANTIC CARGO FIXTURE LIST").exists());
-    console.info("Text AFRAMAX ATLANTIC exists");
+        assert.ok(await text("AFRAMAX ATLANTIC CARGO FIXTURE LIST").exists());
+        console.info("Text AFRAMAX ATLANTIC exists");
 
 
     // We can make some navigation inside the app
@@ -31,6 +33,7 @@ const { openBrowser, click, write, closeBrowser } = require('taiko');
     } catch (error) {
         console.error(error);
     } finally {
+        await screencast.stopScreencast();
         await closeBrowser();
     }
 })();
