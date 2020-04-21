@@ -4,9 +4,11 @@ const { openBrowser, click, write, closeBrowser, screencast } = require('taiko')
 (async () => {
     try {
         await openBrowser();
-        await screencast.startScreencast('images/output_craft.gif');
+        await screencast.startScreencast('images/output_craft2.gif');
 
-	    await goto("https://newcraftstgui.z22.web.core.windows.net", { navigationTimeout:150000} );
+	    //await goto("https://newcraftstgui.z22.web.core.windows.net", { navigationTimeout:150000} );
+        await goto("https://newcraftdevui.z22.web.core.windows.net", { navigationTimeout:150000} );
+        
         await click("SIGN IN WITH MICROSOFT");
         await write("robert.sebenda@ttt.studio");
         await click("Next");
@@ -26,7 +28,7 @@ const { openBrowser, click, write, closeBrowser, screencast } = require('taiko')
     //await click($("#button_id"))
     await click("Admin");
     await click("LOG OUT");
-    //Popup wair
+    //Popup 
     console.info("Log out");
     await click("LOG OUT");
     
