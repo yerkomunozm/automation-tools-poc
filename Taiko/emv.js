@@ -5,23 +5,22 @@ const { screencast, openBrowser, goto, write, textBox, focus, click, closeBrowse
     try {
         await openBrowser();
 
-        //await screencast.startScreencast('images/emv.gif');
+        await screencast.startScreencast('images/emv.gif');
         await goto("http://emv-dev.2tt.io/");
-        await click("LOGIN");
-        //await focus(textBox({id:'email'}));
+
         await write("felipe.pena@ttt.studio");
         await focus(textBox({ id: 'password' }));
         await write("123456");
-        await click("Login");
+        await click("LOG IN");
 
         //Assertion
         assert.ok(await text("Dashboard").exists());
         console.log("Assertion Dashboard OK");
 
-        await click("Staff Table View");
+        await click("Staff");
 
         //Assertion
-        assert.ok(await text("All Staff").exists());
+        assert.ok(await text("STAFF MANAGEMENT").exists());
         console.log("Assertion All Staff OK");
 
 
@@ -29,7 +28,7 @@ const { screencast, openBrowser, goto, write, textBox, focus, click, closeBrowse
     } catch (error) {
         console.error(error);
     } finally {
-        //await screencast.stopScreencast();
+        await screencast.stopScreencast();
         await closeBrowser();
     }
 })();

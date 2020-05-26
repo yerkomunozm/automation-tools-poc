@@ -4,7 +4,7 @@ This is an executable specification file. This file follows markdown syntax. Eve
 To execute this specification, use
 	npm test
 
-## Login correctly in Craft Staging Environment
+## Login correctly in Harvest and create entries
 
 * Goto Craft login page
 * Login to environment with "robert.sebenda@ttt.studio"

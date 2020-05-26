@@ -3,7 +3,7 @@ const { screencast, openBrowser, goto, click, write, textBox, focus, closeBrowse
     try {
         await openBrowser();
         await goto("http://emv-dev.2tt.io/");
-        await click("LOGIN");
+        //await click("LOGIN");
         await write("felipe.pena@ttt.studio");
         await focus(textBox({ id: 'password' }));
         await write("123456");
